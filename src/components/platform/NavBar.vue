@@ -4,6 +4,9 @@
 		<h1 class="ds-nav-bar__title">Компоненты</h1>
 		<ul class="ds-nav-bar__components-list ds-components-list">
 			<li class="ds-components-list__item">
+				<router-link class="ds-components-list__link" to="/system/logos">Logos</router-link>
+			</li>
+			<li class="ds-components-list__item">
 				<router-link class="ds-components-list__link" to="/system/buttons">Buttons</router-link>
 			</li>
 			<li class="ds-components-list__item">
@@ -11,6 +14,13 @@
 			</li>
 			<li class="ds-components-list__item">
 				<router-link class="ds-components-list__link" to="/system/tooltips">Tooltips</router-link>
+			</li>
+
+			<li class="ds-components-list__item">
+				<router-link class="ds-components-list__link" to="/">
+					Назад на главную
+					<span>v 1.0</span>
+				</router-link>
 			</li>
 		</ul>
 	</nav>
@@ -25,7 +35,10 @@ export default {};
 
 .ds-nav-bar {
 	background: #2f343a;
+	overflow-y: auto;
+	height: 100vh;
 
+	position: relative;
 	&__logo {
 		font-family: @secondFont;
 		font-weight: bold;
@@ -70,7 +83,16 @@ export default {};
 }
 
 .ds-components-list {
+	display: flex;
+	flex-direction: column;
+
 	&__item {
+		&:nth-last-child(1) {
+			position: absolute;
+			bottom: 0;
+
+			width: 100%;
+		}
 	}
 
 	&__link {

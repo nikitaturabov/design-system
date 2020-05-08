@@ -11,5 +11,7 @@ export default {};
 <style lang="less">
 .ds-block-view {
 	background: #f6f8fa;
+	overflow-y: auto;
+	height: 100vh;
 }
 </style>
