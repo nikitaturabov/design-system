@@ -1,5 +1,6 @@
 <template>
-	<div class="platform">
+	<div v-if="setUser" class="platform">
+		<profile></profile>
 		<div class="platform__header">
 			<h1 class="platform__title ds-title ds-title--1">
 				DESIGN SYSTEM
@@ -51,9 +52,15 @@
 </template>
 
 <script>
+import Profile from "@/components/platform/Profile.vue";
 export default {
 	name: "App",
-	components: {},
+	components: { Profile },
+	computed: {
+		setUser() {
+			return this.$store.getters.getUser;
+		},
+	},
 };
 </script>
 

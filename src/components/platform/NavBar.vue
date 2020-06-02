@@ -3,31 +3,65 @@
 		<div class="ds-nav-bar__logo">CENTROZORD</div>
 		<h1 class="ds-nav-bar__title">Компоненты</h1>
 		<ul class="ds-nav-bar__components-list ds-components-list">
-			<li class="ds-components-list__item">
-				<router-link class="ds-components-list__link" to="/system/logos">Logos</router-link>
-			</li>
-			<li class="ds-components-list__item">
-				<router-link class="ds-components-list__link" to="/system/buttons">Buttons</router-link>
-			</li>
-			<li class="ds-components-list__item">
-				<router-link class="ds-components-list__link" to="/system/forms">Forms</router-link>
-			</li>
-			<li class="ds-components-list__item">
-				<router-link class="ds-components-list__link" to="/system/tooltips">Tooltips</router-link>
-			</li>
-
-			<li class="ds-components-list__item">
-				<router-link class="ds-components-list__link" to="/">
-					Назад на главную
-					<span>v 1.0</span>
-				</router-link>
-			</li>
+			<router-link
+				tag="li"
+				ref="link"
+				class="ds-components-list__item ds-components-list__link"
+				v-for="(page, index) in pages"
+				:key="index"
+				:to="page.path"
+				v-html="page.content"
+			></router-link>
 		</ul>
 	</nav>
 </template>
 
 <script>
-export default {};
+export default {
+	data() {
+		return {
+			pages: [
+				{
+					content: "Logos",
+					path: "/system/logos",
+				},
+				{
+					content: "Colors",
+					path: "/system/colors",
+				},
+				{
+					content: "Buttons",
+					path: "/system/buttons",
+				},
+				{
+					content: "Forms",
+					path: "/system/forms",
+				},
+				{
+					content: "Tooltips",
+					path: "/system/tooltips",
+				},
+				{
+					content: "Назад на главную <span>v 1.0</span>",
+					path: "/",
+				},
+			],
+		};
+	},
+	methods: {
+		changePage() {
+			console.log("WORK!!!");
+			this.$store.dispatch("changePage");
+		},
+	},
+	mounted() {
+		[...this.$refs.link].forEach(item => {
+			item.$el.addEventListener("click", () => {
+				this.$store.dispatch("changePage");
+			});
+		});
+	},
+};
 </script>
 
 <style lang="less">
@@ -100,6 +134,8 @@ export default {};
 		color: #ffffff;
 		padding: 18px 45px;
 		display: block;
+		cursor: pointer;
+		white-space: nowrap;
 
 		&:hover {
 			background: #fff;
@@ -107,5 +143,9 @@ export default {};
 			color: #2f343a;
 		}
 	}
+}
+.router-link-exact-active {
+	background: #fff;
+	color: #2f343a;
 }
 </style>

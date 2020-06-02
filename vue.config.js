@@ -11,7 +11,6 @@ module.exports = {
 	configureWebpack: {
 		entry: "./src/main.js",
 		plugins: [new CopyWebpackPlugin([{ from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` }])],
-
 		module: {
 			rules: [
 				{
@@ -30,7 +29,22 @@ module.exports = {
 						name: "[name].[ext]",
 					},
 				},
+				{
+					test: /\.svg$/,
+					loader: "svg-sprite-loader",
+					options: {
+						runtimeCompat: true,
+					},
+				},
 			],
 		},
+	},
+	chainWebpack: (config) => {
+		if (process.env.NODE_ENV === "production") {
+			config.plugin("html").tap((args) => {
+				args[0].minify.removeAttributeQuotes = false;
+				return args;
+			});
+		}
 	},
 };
