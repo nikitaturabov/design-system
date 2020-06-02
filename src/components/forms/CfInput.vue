@@ -3,9 +3,16 @@
 		<div v-if="caption" class="input__caption">{{ caption }}</div>
 		<label
 			class="input__wrapper"
-			:class="[{ 'input__wrapper--error': validate === 'wrong' }, { 'input__wrapper--disabled': !!disabled }]"
+			:class="[{ 'input__wrapper--error': validate === 'wrong' }, { 'input__wrapper--disabled': !!disabled }, { 'input__wrapper--focus': inFocused}]"
 		>
-			<input class="input__editor" type="text" :placeholder="placeholder" :disabled="disabled" />
+			<input
+				class="input__editor"
+				type="text"
+				:placeholder="placeholder"
+				:disabled="disabled"
+				@focus="inFocused = true"
+				@blur="inFocused = false"
+			/>
 			<div v-if="validate === 'done'" class="input__done" v-html="iconDone"></div>
 			<div v-if="validate === 'wrong'" class="input__wrong" v-html="iconWrong"></div>
 		</label>
@@ -35,6 +42,7 @@ export default {
 	},
 	data() {
 		return {
+			inFocused: false,
 			iconDone: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<circle cx="8" cy="8" r="8" fill="#8BDA93"/>
 						<path d="M11.5554 5.33325L6.66656 10.2221L4.44434 7.99992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -62,6 +70,8 @@ export default {
 	&__wrapper {
 		margin-top: 8px;
 
+		background: #ffffff;
+
 		border: 1px solid #c8d4e2;
 		border-radius: 4px;
 		padding: 8px 16px;
@@ -69,9 +79,7 @@ export default {
 		min-width: 242px;
 
 		display: block;
-
 		position: relative;
-
 		cursor: text;
 
 		&--error {
@@ -84,6 +92,10 @@ export default {
 			input {
 				color: #8b949d;
 			}
+		}
+
+		&--focus {
+			border: 1px solid #305dff;
 		}
 	}
 

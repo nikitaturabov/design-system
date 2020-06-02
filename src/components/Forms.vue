@@ -48,7 +48,7 @@
 			</div>
 
 			<div class="ds-component__row">
-				<cf-select placeholder="Select" caption="Select"></cf-select>
+				<cf-select placeholder="Select" caption="Select" :options="options"></cf-select>
 			</div>
 		</div>
 	</div>
@@ -62,6 +62,56 @@ export default {
 	data() {
 		return {
 			components: ["Square"],
+			options: [
+				{
+					text: "option1",
+					link: "#",
+				},
+				{
+					text: "option2",
+					link: "#",
+				},
+				{
+					text: "option3",
+					link: "#",
+				},
+				{
+					text: "option4",
+					link: "#",
+				},
+				{
+					text: "option1",
+					link: "#",
+				},
+				{
+					text: "option2",
+					link: "#",
+				},
+				{
+					text: "option3",
+					link: "#",
+				},
+				{
+					text: "option4",
+					link: "#",
+				},
+				{
+					text: "option1",
+					link: "#",
+				},
+				{
+					text: "option2",
+					link: "#",
+				},
+				{
+					text: "option3",
+					link: "#",
+				},
+				{
+					text: "option4",
+					link: "#",
+				},
+			],
 		};
 	},
 	components: {
