@@ -5,6 +5,18 @@
 		<span class="ds-current-page__text ds-current-page__text--gray">Компоненты формы</span>
 
 		<div class="ds-component">
+			<h3 class="ds-component__name">Select</h3>
+
+			<div class="ds-component__tabs">
+				<button class="ds-component__tab ds-component__tab--active">Square</button>
+			</div>
+
+			<div class="ds-component__row">
+				<cf-select placeholder="Select" caption="Select" :options="options"></cf-select>
+			</div>
+		</div>
+
+		<div class="ds-component">
 			<h3 class="ds-component__name">Input without label</h3>
 
 			<div class="ds-component__tabs">
@@ -39,18 +51,6 @@
 				<cf-input placeholder="Input" caption="Label" disabled></cf-input>
 			</div>
 		</div>
-
-		<div class="ds-component">
-			<h3 class="ds-component__name">Select</h3>
-
-			<div class="ds-component__tabs">
-				<button class="ds-component__tab ds-component__tab--active">Square</button>
-			</div>
-
-			<div class="ds-component__row">
-				<cf-select placeholder="Select" caption="Select" :options="options"></cf-select>
-			</div>
-		</div>
 	</div>
 </template>
 
@@ -63,38 +63,6 @@ export default {
 		return {
 			components: ["Square"],
 			options: [
-				{
-					text: "option1",
-					link: "#",
-				},
-				{
-					text: "option2",
-					link: "#",
-				},
-				{
-					text: "option3",
-					link: "#",
-				},
-				{
-					text: "option4",
-					link: "#",
-				},
-				{
-					text: "option1",
-					link: "#",
-				},
-				{
-					text: "option2",
-					link: "#",
-				},
-				{
-					text: "option3",
-					link: "#",
-				},
-				{
-					text: "option4",
-					link: "#",
-				},
 				{
 					text: "option1",
 					link: "#",

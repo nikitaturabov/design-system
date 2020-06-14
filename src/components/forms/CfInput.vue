@@ -88,6 +88,7 @@ export default {
 
 		&--disabled {
 			background: #e9eef3;
+			cursor: default;
 
 			input {
 				color: #8b949d;
