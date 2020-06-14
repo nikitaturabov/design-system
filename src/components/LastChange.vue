@@ -10,16 +10,16 @@
 		>На этой панели можно отследить последние внесённые изменения в системе</span>
 
 		<table class="ds-current-page__table ds-table">
-			<tr class="ds-table__row">
-				<td class="ds-table__cell">№</td>
-				<td class="ds-table__cell">Изменения</td>
-				<td class="ds-table__cell">дата</td>
-			</tr>
-			<tr class="ds-table__row" v-for="(data, index) in getMyCommits" :key="index">
-				<td class="ds-table__cell">{{ index + 1 }}</td>
-				<td class="ds-table__cell">{{ data.commit.message }}</td>
-				<td class="ds-table__cell">{{ data.commit.author.date }}</td>
-			</tr>
+			<tbody class="ds-table__body">
+				<tr class="ds-table__row">
+					<td class="ds-table__cell">№</td>
+					<td class="ds-table__cell">Изменения</td>
+				</tr>
+				<tr class="ds-table__row" v-for="(data, index) in getMyCommits" :key="index">
+					<td class="ds-table__cell">{{ index + 1 }}</td>
+					<td class="ds-table__cell">{{ data.commit.message }}</td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 </template>
@@ -45,7 +45,7 @@ export default {
 		promise
 			.then(response => response.json())
 			.then(response => {
-				this.commits = response;
+				this.commits = response.slice(0, 15);
 				console.log(response);
 			});
 	},

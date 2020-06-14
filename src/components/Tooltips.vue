@@ -14,14 +14,58 @@
 			<div class="ds-component__tabs">
 				<button class="ds-component__tab ds-component__tab--active">Square</button>
 			</div>
-			<div class="ds-component__row">
-				<tooltip>
-					<btn element="button" color="red" size="large" text="Войти" shape="round"></btn>
-				</tooltip>
+			<div class="ds-component__wrapper">
+				<div class="ds-component__row ds-component__row--center ds-component__row--mrt10">
+					<tooltip position="top-start">
+						<btn element="button" color="red" size="small" text="Top start" shape="round"></btn>
+					</tooltip>
 
-				<tooltip>
-					<cf-input placeholder="Input with tooltip"></cf-input>
-				</tooltip>
+					<tooltip position="top">
+						<btn element="button" color="red" size="small" text="Top" shape="round"></btn>
+					</tooltip>
+
+					<tooltip position="top-end">
+						<btn element="button" color="red" size="small" text="Top end" shape="round"></btn>
+					</tooltip>
+				</div>
+				<div class="ds-component__row ds-component__row--spb ds-component__row--mrt10">
+					<tooltip position="right-start">
+						<btn element="button" color="red" size="small" text="Right start" shape="round"></btn>
+					</tooltip>
+
+					<tooltip position="left-start">
+						<btn element="button" color="red" size="small" text="Left start" shape="round"></btn>
+					</tooltip>
+				</div>
+				<div class="ds-component__row ds-component__row--spb ds-component__row--mrt10">
+					<tooltip position="right">
+						<btn element="button" color="red" size="small" text="Right" shape="round"></btn>
+					</tooltip>
+					<tooltip position="left">
+						<btn element="button" color="red" size="small" text="Left" shape="round"></btn>
+					</tooltip>
+				</div>
+				<div class="ds-component__row ds-component__row--spb ds-component__row--mrt10">
+					<tooltip position="right-end">
+						<btn element="button" color="red" size="small" text="Right end" shape="round"></btn>
+					</tooltip>
+					<tooltip position="left-end">
+						<btn element="button" color="red" size="small" text="Left end" shape="round"></btn>
+					</tooltip>
+				</div>
+				<div class="ds-component__row ds-component__row--center ds-component__row--mrt10">
+					<tooltip position="bottom-start">
+						<btn element="button" color="red" size="small" text="Bottom start" shape="round"></btn>
+					</tooltip>
+
+					<tooltip position="bottom">
+						<btn element="button" color="red" size="small" text="Bottom" shape="round"></btn>
+					</tooltip>
+
+					<tooltip position="bottom-end">
+						<btn element="button" color="red" size="small" text="Bottom end" shape="round"></btn>
+					</tooltip>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -30,7 +74,6 @@
 <script>
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import Btn from "@/components/btns/Btn.vue";
-import CfInput from "@/components/forms/CfInput.vue";
 export default {
 	name: "Tolltips",
 	props: {
@@ -42,7 +85,6 @@ export default {
 	components: {
 		Btn,
 		Tooltip,
-		CfInput,
 	},
 };
 </script>

@@ -1,16 +1,36 @@
 .ds-table {
 	border-spacing: 0px;
+	&__cap {
+		display: block;
+		width: 100%;
+	}
+
+	&__body {
+		max-height: 700px;
+		width: 100%;
+		display: block;
+		overflow-y: auto;
+	}
+
 	&__row {
-		&:nth-child(odd) {
-			background: #8b949d;
+		&:first-child {
+			.ds-table__cell {
+				color: #646b72;
+				font-weight: 500;
+			}
 		}
-		&:nth-child(even) {
-			background: #c4c4c4;
+		&:hover {
+			.ds-table__cell {
+				border-bottom: 1px solid #030303;
+			}
 		}
 	}
 	&__cell {
-		padding: 8px;
-		color: #fff;
-		font-weight: 600;
+		padding: 16px;
+
+		color: #2f343a;
+		font-weight: 500;
+		border-bottom: 1px solid #c4c4c4;
+		cursor: default;
 	}
 }
