@@ -42,6 +42,11 @@ export default {
 					path: "/system/tooltips",
 				},
 				{
+					content: "LastChange",
+					path: "/system/lastchange",
+				},
+
+				{
 					content: "Назад на главную <span>v 1.0</span>",
 					path: "/",
 				},
@@ -121,6 +126,12 @@ export default {
 	flex-direction: column;
 
 	&__item {
+		&:nth-last-child(2) {
+			position: absolute;
+			bottom: 60.5px;
+
+			width: 100%;
+		}
 		&:nth-last-child(1) {
 			position: absolute;
 			bottom: 0;

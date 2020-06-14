@@ -7,6 +7,7 @@ import Forms from "@/components/Forms.vue";
 import Logos from "@/components/Logos.vue";
 import Colors from "@/components/Colors.vue";
 import Auth from "@/components/Auth.vue";
+import LastChange from "@/components/LastChange.vue";
 import ComponentsSystem from "@/components/ComponentsSystem.vue";
 
 Vue.use(VueRouter);
@@ -54,6 +55,11 @@ export default new VueRouter({
 					path: "colors",
 					name: "colors",
 					component: Colors,
+				},
+				{
+					path: "lastchange",
+					name: "lastchange",
+					component: LastChange,
 				},
 			],
 		},

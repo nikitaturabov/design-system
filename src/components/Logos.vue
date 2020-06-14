@@ -65,6 +65,7 @@
 					<component :is="currentTabComponentSecond" size="short"></component>
 				</keep-alive>
 			</div>
+
 			<div v-highlight>
 				<pre class="ds-component__wrapper-code">
 					<code
