@@ -18,19 +18,21 @@
 			<div
 				class="select__triangle"
 				v-html="triangleIcon"
-				:class="[ { 'select__triangle--rotate': dropdownShow } ]"
+				:class="{ 'select__triangle--rotate': dropdownShow }"
 			></div>
 		</label>
 		<div v-if="errorText" class="select__error">{{ errorText }}</div>
 
-		<ul class="select__dropdown" :class=" { 'select__dropdown--active': dropdownShow} ">
-			<li
-				class="select__dropdown-item"
-				v-for="(option, index) in options"
-				:key="index"
-				@click="handlerItemDropdown(option)"
-			>{{ option.text }}</li>
-		</ul>
+		<div class="select__dropdown-wrapper" v-show="dropdownShow">
+			<ul class="select__dropdown" :class="{ 'select__dropdown--active': dropdownShow }">
+				<li
+					class="select__dropdown-item"
+					v-for="(option, index) in options"
+					:key="index"
+					@click="handlerItemDropdown(option)"
+				>{{ option.text }}</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -179,21 +181,79 @@ export default {
 		align-items: center;
 	}
 
+	&__dropdown-wrapper {
+		position: absolute;
+		top: 80px;
+		left: 0;
+		width: 100%;
+		z-index: 1;
+
+		&:before {
+			content: "";
+			display: block;
+
+			height: 10px;
+			width: 10px;
+			border: 1px solid #e4e7ed;
+
+			position: absolute;
+			top: -12px;
+			right: 20px;
+
+			position: absolute;
+			pointer-events: none;
+			border: solid transparent;
+			transform: rotate(180deg);
+			content: "";
+			height: 0;
+			width: 0;
+			border-width: 6px;
+			margin: 0 -6px;
+			border-top-color: #e4e7ed;
+
+			z-index: 3;
+		}
+
+		&:after {
+			content: "";
+			display: block;
+
+			height: 10px;
+			width: 10px;
+			border: 1px solid #e4e7ed;
+
+			position: absolute;
+			top: -10px;
+			right: 20px;
+
+			position: absolute;
+			pointer-events: none;
+			border: solid transparent;
+			transform: rotate(180deg);
+			content: "";
+			height: 0;
+			width: 0;
+			border-width: 6px;
+			margin: 0 -6px;
+			border-top-color: #ffffff;
+
+			z-index: 3;
+		}
+	}
+
 	&__dropdown {
 		max-height: 0px;
 		overflow: hidden;
 		opacity: 0;
 
 		padding: 8px 0;
-		position: absolute;
-		top: 80px;
-		left: 0;
 
 		width: 100%;
 		background: #ffffff;
 		border: 1px solid #e4e7ed;
 		box-sizing: border-box;
 		border-radius: 8px;
+		box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
 
 		color: #53575a;
 		letter-spacing: 0.02em;
