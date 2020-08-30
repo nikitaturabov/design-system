@@ -1,0 +1,10 @@
+.ds-columns {
+	&--x2 {
+		display: flex;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+	}
+}

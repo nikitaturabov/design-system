@@ -1,11 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Platform from "@/components/Platform.vue";
-import Buttons from "@/components/Buttons.vue";
-import Tooltips from "@/components/Tooltips.vue";
-import Forms from "@/components/Forms.vue";
-import Logos from "@/components/Logos.vue";
-import Colors from "@/components/Colors.vue";
+import Platform from "@/pages/Platform.vue";
+import Layout from "@/pages/Layout.vue";
+import Buttons from "@/pages/Buttons.vue";
+import Tooltips from "@/pages/Tooltips.vue";
+import Forms from "@/pages/Forms.vue";
+import Logos from "@/pages/Logos.vue";
+import Colors from "@/pages/Colors.vue";
 import Auth from "@/components/Auth.vue";
 import LastChange from "@/components/LastChange.vue";
 import ComponentsSystem from "@/components/ComponentsSystem.vue";
@@ -31,6 +32,11 @@ export default new VueRouter({
 			name: "system",
 			component: ComponentsSystem,
 			children: [
+				{
+					path: "layout",
+					name: "layout",
+					component: Layout,
+				},
 				{
 					path: "buttons",
 					name: "buttons",

@@ -1,13 +1,7 @@
 <template>
 	<div class="ds-auth-window">
 		<div class="ds-auth-window__popup">
-			<svg
-				width="133"
-				height="29"
-				viewBox="0 0 133 29"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
+			<svg width="133" height="29" viewBox="0 0 133 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<circle cx="14.1581" cy="14.1581" r="14.1581" fill="#FC5050" />
 				<path
 					d="M14.3989 20.5935C18.2189 20.5935 19.5455 17.8276 19.7693 16.6655H17.0202C16.7804 17.1074 16.0772 18.0894 14.3989 18.0894C12.5129 18.0894 11.3621 16.5019 11.3621 14.587C11.3621 12.6722 12.5129 11.0846 14.3989 11.0846C15.9653 11.0846 16.7485 12.0502 17.0042 12.5085H19.7693C19.4976 11.1828 18.0911 8.58057 14.3989 8.58057C10.9945 8.58057 8.58105 11.1337 8.58105 14.587C8.58105 18.0403 10.9945 20.5935 14.3989 20.5935Z"
@@ -21,10 +15,7 @@
 					d="M33.1149 8.77696V20.3971H35.7681V12.3939L41.9536 20.4298H44.1593V8.77696H41.57V15.8963L36.1997 8.77696H33.1149Z"
 					fill="#2F343A"
 				/>
-				<path
-					d="M45.6763 11.1992H49.9758V20.3971H52.677V11.1992H56.9764V8.77696H45.6763V11.1992Z"
-					fill="#2F343A"
-				/>
+				<path d="M45.6763 11.1992H49.9758V20.3971H52.677V11.1992H56.9764V8.77696H45.6763V11.1992Z" fill="#2F343A" />
 				<path
 					d="M58.4945 20.3971H61.2116V15.9782H64.3283L66.7258 20.3971H69.5868L67.0295 15.6672C68.3881 15.1598 69.1872 14.0469 69.1872 12.4267C69.1872 10.0208 67.6528 8.77696 65.1435 8.77696H58.4945V20.3971ZM61.2116 11.1665H64.8558C65.8787 11.1665 66.4062 11.5429 66.4062 12.4267C66.4062 13.2286 65.8627 13.6378 64.8558 13.6378H61.2116V11.1665Z"
 					fill="#2F343A"
@@ -56,9 +47,9 @@
 					v-for="(tab, index) in tabs"
 					:key="index"
 					class="ds-auth-window__tab"
-					:class="{'ds-auth-window__tab--active': tab.active}"
+					:class="{ 'ds-auth-window__tab--active': tab.active }"
 				>
-					<a @click="setActive(tab)">{{tab.caption}}</a>
+					<a @click="setActive(tab)">{{ tab.caption }}</a>
 				</li>
 			</ul>
 
@@ -97,7 +88,7 @@
 						</label>
 					</div>
 
-					<div v-if="getError">{{getError}}</div>
+					<div v-if="getError">{{ getError }}</div>
 					<button class="ds-auth-window__btn-sub" type="submit">Зарегаться</button>
 				</form>
 
@@ -134,7 +125,7 @@
 							/>
 						</label>
 					</div>
-					<div v-if="getError">{{getError}}</div>
+					<div v-if="getError">{{ getError }}</div>
 					<button class="ds-auth-window__btn-sub" type="submit">Войти</button>
 				</form>
 
@@ -209,7 +200,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="scss">
 .ds-auth-window {
 	background: #53575a;
 	height: 100vh;

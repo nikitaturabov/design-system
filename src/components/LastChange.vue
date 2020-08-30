@@ -5,9 +5,9 @@
 			<strong>CHANGE</strong> IN THE SYSTEM
 		</h1>
 
-		<span
-			class="ds-current-page__text ds-current-page__text--gray"
-		>На этой панели можно отследить последние внесённые изменения в системе</span>
+		<span class="ds-current-page__text ds-current-page__text--gray"
+			>На этой панели можно отследить последние внесённые изменения в системе</span
+		>
 
 		<table class="ds-current-page__table ds-table">
 			<tbody class="ds-table__body">
@@ -57,4 +57,4 @@ export default {
 };
 </script>
 
-<style lang="less"></style>
+<style lang="scss"></style>

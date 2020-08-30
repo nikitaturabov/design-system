@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "@/router.js";
 import store from "@/store.js";
-import styles from "@/assets/less/main.less";
+import styles from "@/assets/scss/main.scss";
 
 import "vue-code-highlight/themes/duotone-sea.css";
 import "vue-code-highlight/themes/prism-dark.css";
@@ -31,7 +31,7 @@ let firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 new Vue({
-	render: (h) => h(App),
+	render: h => h(App),
 	router,
 	store,
 	styles,

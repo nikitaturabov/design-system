@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import NavBar from "@/components/platform/NavBar.vue";
-import BlockView from "@/components/platform/BlockView.vue";
-import Profile from "@/components/platform/Profile.vue";
+import NavBar from "@/partials/NavBar.vue";
+import BlockView from "@/partials/BlockView.vue";
+import Profile from "@/partials/Profile.vue";
 export default {
 	data() {
 		return {
@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="scss">
 .ds-page {
 	display: flex;
 	justify-content: space-between;

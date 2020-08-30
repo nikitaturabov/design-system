@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Profile from "@/components/platform/Profile.vue";
+import Profile from "@/partials/Profile.vue";
 export default {
 	name: "App",
 	components: {
@@ -15,4 +15,4 @@ export default {
 };
 </script>
 
-<style lang="less"></style>
+<style lang="scss"></style>

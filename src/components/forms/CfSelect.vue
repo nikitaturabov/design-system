@@ -3,7 +3,11 @@
 		<div v-if="caption" class="select__caption">{{ caption }}</div>
 		<label
 			class="select__wrapper"
-			:class="[{ 'select__wrapper--error': validate === 'wrong' }, { 'select__wrapper--disabled': !!disabled }, { 'select__wrapper--focus': inFocused }]"
+			:class="[
+				{ 'select__wrapper--error': validate === 'wrong' },
+				{ 'select__wrapper--disabled': !!disabled },
+				{ 'select__wrapper--focus': inFocused },
+			]"
 		>
 			<input
 				class="select__editor"
@@ -15,11 +19,9 @@
 				@click="dropdownShow = !dropdownShow"
 				v-model="selectedValue"
 			/>
-			<div
-				class="select__triangle"
-				v-html="triangleIcon"
-				:class="{ 'select__triangle--rotate': dropdownShow }"
-			></div>
+			<icon-base height="24" width="24" class="select__triangle" :class="{ 'select__triangle--rotate': dropdownShow }"
+				><triangle
+			/></icon-base>
 		</label>
 		<div v-if="errorText" class="select__error">{{ errorText }}</div>
 
@@ -30,13 +32,17 @@
 					v-for="(option, index) in options"
 					:key="index"
 					@click="handlerItemDropdown(option)"
-				>{{ option.text }}</li>
+				>
+					{{ option.text }}
+				</li>
 			</ul>
 		</div>
 	</div>
 </template>
 
 <script>
+import IconBase from "@/components/icons/IconBase.vue";
+import Triangle from "@/components/icons/Triangle.vue";
 export default {
 	props: {
 		placeholder: {
@@ -75,10 +81,14 @@ export default {
 			this.dropdownShow = false;
 		},
 	},
+	components: {
+		IconBase,
+		Triangle,
+	},
 };
 </script>
 
-<style lang="less">
+<style lang="scss">
 .select {
 	margin: 8px;
 	position: relative;
@@ -94,7 +104,7 @@ export default {
 
 		background: #ffffff;
 
-		border: 1px solid #c8d4e2;
+		border: 0.5px solid #bdc6cf;
 		border-radius: 4px;
 		padding: 8px 16px;
 

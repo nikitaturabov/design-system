@@ -1,0 +1,25 @@
+.grid {
+  $grid-columns: 16;
+  display: flex;
+
+  &--rows {
+    flex-direction: column;
+  }
+
+  &--baseline {
+    align-items: baseline;
+  }
+
+  &__col {
+    flex-grow: 1;
+    flex-basis: 0;
+
+    @for $i from 1 through ($grid-columns - 1) {
+      &--#{$i} {
+        width: 100%/($grid-columns/$i);
+        flex-basis: 100%/($grid-columns/$i);
+        flex-grow: unset;
+      }
+    }
+  }
+}

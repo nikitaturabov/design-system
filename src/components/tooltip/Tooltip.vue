@@ -3,18 +3,20 @@
 		<slot class="tooltip__curr-element"></slot>
 		<div
 			class="tooltip__container"
-			:class="[{ 'tooltip__container--top-start': position === 'top-start' },
-			{ 'tooltip__container--top': position === 'top' },
-			{ 'tooltip__container--top-end': position === 'top-end' },
-			{ 'tooltip__container--left-start': position === 'left-start' },
-			{ 'tooltip__container--right-start': position === 'right-start' },
-			{ 'tooltip__container--left': position === 'left' },
-			{ 'tooltip__container--right': position === 'right' },
-			{ 'tooltip__container--left-end': position === 'left-end' },
-			{ 'tooltip__container--right-end': position === 'right-end' },
-			{ 'tooltip__container--bottom-start': position === 'bottom-start' },
-			{ 'tooltip__container--bottom': position === 'bottom' },
-			{ 'tooltip__container--bottom-end': position === 'bottom-end' }]"
+			:class="[
+				{ 'tooltip__container--top-start': position === 'top-start' },
+				{ 'tooltip__container--top': position === 'top' },
+				{ 'tooltip__container--top-end': position === 'top-end' },
+				{ 'tooltip__container--left-start': position === 'left-start' },
+				{ 'tooltip__container--right-start': position === 'right-start' },
+				{ 'tooltip__container--left': position === 'left' },
+				{ 'tooltip__container--right': position === 'right' },
+				{ 'tooltip__container--left-end': position === 'left-end' },
+				{ 'tooltip__container--right-end': position === 'right-end' },
+				{ 'tooltip__container--bottom-start': position === 'bottom-start' },
+				{ 'tooltip__container--bottom': position === 'bottom' },
+				{ 'tooltip__container--bottom-end': position === 'bottom-end' },
+			]"
 		>
 			<span class="tooltip__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
 		</div>
@@ -31,7 +33,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="scss">
 .tooltip {
 	position: relative;
 	&__container {

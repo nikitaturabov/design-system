@@ -1,19 +1,8 @@
 <template>
 	<div>
-		<button
-			class="btn"
-			:class="[setColor, setSize, setShape, {'btn--arrow': arrow}]"
-			v-if="element === 'button'"
-		>
-			{{text}}
-			<svg
-				v-if="arrow"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
+		<button class="btn" :class="[setColor, setSize, setShape, { 'btn--arrow': arrow }]" v-if="element === 'button'">
+			{{ text }}
+			<svg v-if="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g clip-path="url(#clip0)">
 					<path
 						d="M7.15256e-07 12L19 12"
@@ -37,7 +26,7 @@
 				</defs>
 			</svg>
 		</button>
-		<a v-if="element === 'link'" class="btn btn--red" :class="[setColor, setSize, setShape]">{{text}}</a>
+		<a v-if="element === 'link'" class="btn btn--red" :class="[setColor, setSize, setShape]">{{ text }}</a>
 		<label v-if="element === 'input'">
 			<input type="button" class="btn btn--red" :class="[setColor, setSize, setShape]" :value="text" />
 		</label>
@@ -93,10 +82,9 @@ export default {
 };
 </script>
 
-<style lang="less">
-@import "../../assets/less/main.less";
+<style lang="scss">
 .btn {
-	font-family: @mainFont;
+	//font-family: $mainFont;
 	border: none;
 	outline: none;
 	font-weight: 600;
@@ -141,16 +129,16 @@ export default {
 		line-height: 24px;
 		font-weight: bold;
 	}
-	&--arrow&--small {
+	&--arrow &--small {
 		min-width: 192px;
 		max-height: 46px;
 		padding: 16px 26px 16px 16px;
 	}
-	&--arrow&--medium {
+	&--arrow &--medium {
 		min-width: 192px;
 		max-height: 64px;
 	}
-	&--arrow&--large {
+	&--arrow &--large {
 		min-width: 192px;
 		max-height: 64px;
 	}
