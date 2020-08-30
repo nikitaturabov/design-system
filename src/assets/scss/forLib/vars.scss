@@ -15,5 +15,13 @@ $smTableWidth: 640px;
 $phoneWidth: 480px;
 $smPhoneWidth: 320px;
 
-$gutter: 8px;
-$grid-columns: 16;
+// Media queries
+$screen-mobile-max: 760px;
+$screen-tablet-max: 1024px;
+$screen-desktop-min: $screen-mobile-max + 1px;
+$screen-mobile-min-xs: 400px;
+
+// Grid
+$grid-columns: 24;
+$grid-gutter: 8px;
+$grid-gutter-mobile: 8px;

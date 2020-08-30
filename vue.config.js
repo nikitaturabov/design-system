@@ -8,16 +8,13 @@ const PATHS = {
 	assets: "assets/",
 };
 
-function addStyleResource(rule) {
-	rule
-		.use("style-resource")
-		.loader("style-resources-loader")
-		.options({
-			patterns: [path.resolve(__dirname, "./src/assets/scss/main.scss")],
-		});
-}
-
 module.exports = {
+	pluginOptions: {
+		"style-resources-loader": {
+			preProcessor: "scss",
+			patterns: [path.resolve(__dirname, "./src/assets/scss/main.scss")],
+		},
+	},
 	configureWebpack: {
 		entry: "./src/main.js",
 		plugins: [
@@ -52,8 +49,6 @@ module.exports = {
 				args[0].minify.removeAttributeQuotes = false;
 				return args;
 			});
-			const types = ["vue-modules", "vue", "normal-modules", "normal"];
-			types.forEach(type => addStyleResource(config.module.rule("stylus").oneOf(type)));
 		}
 	},
 };

@@ -1,17 +1,27 @@
 <template>
-	<div class="cf-row">
+	<div class="grid" :class="[{ 'grid--center_hor': centerHor }, { 'grid--center_vert': centerVert }]">
 		<slot />
-		<div class="grid">
-			<div class="grid__col--8">lorem</div>
-			<div class="grid__col--8">lorem</div>
-		</div>
 	</div>
 </template>
 
 <script>
 export default {
 	name: "CfRow",
+	props: {
+		centerHor: {
+			type: Boolean,
+			default: false,
+		},
+		centerVert: {
+			type: Boolean,
+			default: false,
+		},
+	},
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.grid {
+	width: 100%;
+}
+</style>
