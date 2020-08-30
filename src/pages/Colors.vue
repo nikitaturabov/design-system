@@ -10,40 +10,40 @@
 			<div class="ds-columns__item ds-columns__colors">
 				<h3 class="ds-title ds-title--3">Basic Colors</h3>
 				<div class="ds-color" v-for="(color, index) in colorsBasic" :key="index">
-					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColorFirst(index)"></div>
+					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColor('hexBasic', index)"></div>
 					<div class="ds-color__info-wrapper">
 						<div class="ds-color__name">{{ color.name }}</div>
-						<input ref="hexFirst" class="ds-color__hex" :value="color.hex" />
+						<input ref="hexBasic" class="ds-color__hex" :value="color.hex" />
 					</div>
 				</div>
 			</div>
 			<div class="ds-columns__item ds-columns__colors">
 				<h3 class="ds-title ds-title--3">Text Colors</h3>
 				<div class="ds-color" v-for="(color, index) in colorsText" :key="index">
-					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColorSecond(index)"></div>
+					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColor('hexText', index)"></div>
 					<div class="ds-color__info-wrapper">
 						<div class="ds-color__name">{{ color.name }}</div>
-						<input ref="hexSecond" class="ds-color__hex" :value="color.hex" />
+						<input ref="hexText" class="ds-color__hex" :value="color.hex" />
 					</div>
 				</div>
 			</div>
 			<div class="ds-columns__item ds-columns__colors">
 				<h3 class="ds-title ds-title--3">Back</h3>
 				<div class="ds-color" v-for="(color, index) in colorsBack" :key="index">
-					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColorSecond(index)"></div>
+					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColor('hexBack', index)"></div>
 					<div class="ds-color__info-wrapper">
 						<div class="ds-color__name">{{ color.name }}</div>
-						<input ref="hexSecond" class="ds-color__hex" :value="color.hex" />
+						<input ref="hexBack" class="ds-color__hex" :value="color.hex" />
 					</div>
 				</div>
 			</div>
 			<div class="ds-columns__item ds-columns__colors">
 				<h3 class="ds-title ds-title--3">Dark Mode</h3>
 				<div class="ds-color" v-for="(color, index) in darkMode" :key="index">
-					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColorSecond(index)"></div>
+					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColor('hexDark', index)"></div>
 					<div class="ds-color__info-wrapper">
 						<div class="ds-color__name">{{ color.name }}</div>
-						<input ref="hexSecond" class="ds-color__hex" :value="color.hex" />
+						<input ref="hexDark" class="ds-color__hex" :value="color.hex" />
 					</div>
 				</div>
 			</div>
@@ -180,12 +180,8 @@ export default {
 	},
 	components: {},
 	methods: {
-		copieColorFirst(index) {
-			this.$refs.hexFirst[index].select();
-			document.execCommand("copy");
-		},
-		copieColorSecond(index) {
-			this.$refs.hexSecond[index].select();
+		copieColor(color, index) {
+			this.$refs[color][index].select();
 			document.execCommand("copy");
 		},
 	},
