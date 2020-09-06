@@ -42,6 +42,10 @@ export default {
 					path: "/system/forms",
 				},
 				{
+					content: "Validate",
+					path: "/system/validate",
+				},
+				{
 					content: "Tooltips",
 					path: "/system/tooltips",
 				},

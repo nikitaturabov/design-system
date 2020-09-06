@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "@/router.js";
 import store from "@/store.js";
 import styles from "@/assets/scss/main.scss";
+import Vuelidate from "vuelidate";
 
 import "vue-code-highlight/themes/duotone-sea.css";
 import "vue-code-highlight/themes/prism-dark.css";
@@ -14,9 +15,13 @@ import "core-js/modules/es.promise";
 import "core-js/modules/es.array.iterator";
 import * as firebase from "firebase";
 
+const VueInputMask = require("vue-inputmask").default;
+Vue.use(VueInputMask);
+
 Vue.config.productionTip = false;
 
 Vue.use(vueHljs);
+Vue.use(Vuelidate);
 
 let firebaseConfig = {
 	apiKey: "AIzaSyBA1QrQknaAVpywlcVBIjiTjvIPpxtFW14",

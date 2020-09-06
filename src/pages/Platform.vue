@@ -70,8 +70,10 @@ export default {
 	&__header {
 		width: 100%;
 		height: 355px;
+		padding: 35px;
 		background: #fff;
 		background-image: url("/assets/images/header.png");
+		background-size: 300px 300px;
 	}
 	&__body {
 		display: flex;

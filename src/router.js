@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Platform from "@/pages/Platform.vue";
 import Layout from "@/pages/Layout.vue";
+import Validate from "@/pages/Validate.vue";
 import Buttons from "@/pages/Buttons.vue";
 import Tooltips from "@/pages/Tooltips.vue";
 import Forms from "@/pages/Forms.vue";
@@ -61,6 +62,11 @@ export default new VueRouter({
 					path: "colors",
 					name: "colors",
 					component: Colors,
+				},
+				{
+					path: "validate",
+					name: "validate",
+					component: Validate,
 				},
 				{
 					path: "lastchange",

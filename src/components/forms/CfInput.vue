@@ -10,12 +10,14 @@
 			]"
 		>
 			<input
+				v-model="textData"
 				class="input__editor"
 				type="text"
 				:placeholder="placeholder"
 				:disabled="disabled"
 				@focus="inFocused = true"
-				@blur="inFocused = false"
+				@blur="(inFocused = false), $parent.$emit('any-data', textData)"
+				v-mask="mask"
 			/>
 			<icon-base v-if="validate === 'done'" height="16" width="16" class="input__done"><success /></icon-base>
 			<icon-base v-if="validate === 'wrong'" height="16" width="16" class="input__wrong"><wrong /></icon-base>
@@ -28,6 +30,7 @@
 import IconBase from "@/components/icons/IconBase.vue";
 import Success from "@/components/icons/Success.vue";
 import Wrong from "@/components/icons/Wrong.vue";
+
 export default {
 	props: {
 		placeholder: {
@@ -46,10 +49,14 @@ export default {
 		disabled: {
 			type: Boolean,
 		},
+		mask: {
+			type: String,
+		},
 	},
 	data() {
 		return {
 			inFocused: false,
+			textData: null,
 		};
 	},
 	components: {
