@@ -51,23 +51,23 @@
 
 		<div v-highlight>
 			<pre class="ds-component__wrapper-code">
-					<code class="less">
+					<code class="scss">
 						<div
 	v-for="(color, index ) in colorsBasic"
 	:key="`${index}-${color.name}`"
->@{{color.name}}: {{color.hex}};</div>
+>${{color.name}}: {{color.hex}};</div>
 						<div
 	v-for="(color, index ) in colorsText"
 	:key="`${index}-${color.name}`"
->@{{color.name}}: {{color.hex}};</div>
+>${{color.name}}: {{color.hex}};</div>
             <div
                 v-for="(color, index ) in colorsBack"
                 :key="`${index}-${color.name}`"
-            >@{{color.name}}: {{color.hex}};</div>
+            >${{color.name}}: {{color.hex}};</div>
             <div
                 v-for="(color, index ) in darkMode"
                 :key="`${index}-${color.name}`"
-            >@{{color.name}}: {{color.hex}};</div>
+            >${{color.name}}: {{color.hex}};</div>
 
 					</code>
 				</pre>
