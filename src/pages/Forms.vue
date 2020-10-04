@@ -58,6 +58,15 @@
 				subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
 			></cf-checkbox>
 		</component-wrapper>
+
+		<component-wrapper name="Radio" :column="true">
+			<div>
+				<cf-radio subtext="Мужской" name="gender"></cf-radio>
+				<cf-radio subtext="Женский" name="gender"></cf-radio>
+				<cf-radio subtext="Не определен" name="gender"></cf-radio>
+				<cf-radio subtext="Гемофродит" name="gender" disabled></cf-radio>
+			</div>
+		</component-wrapper>
 	</div>
 </template>
 
@@ -65,6 +74,7 @@
 import CfInput from "@/components/forms/CfInput.vue";
 import CfSelect from "@/components/forms/CfSelect.vue";
 import CfCheckbox from "@/components/forms/CfCheckbox.vue";
+import CfRadio from "@/components/forms/CfRadio.vue";
 import ComponentWrapper from "@/partials/ComponentWrapper.vue";
 
 export default {
@@ -96,6 +106,7 @@ export default {
 		CfInput,
 		CfSelect,
 		CfCheckbox,
+		CfRadio,
 		ComponentWrapper,
 	},
 };
