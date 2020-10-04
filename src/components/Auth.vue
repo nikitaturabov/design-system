@@ -60,35 +60,18 @@
 					@submit.prevent="register"
 					class="ds-auth-window__form-auth form form--auth"
 				>
-					<div class="modal-window__inner input-area modal-window__inner--number">
-						<span class="input-area__text">Email</span>
+					<cf-input caption="Email" placeholder="Введите email" name="login" v-model="email"></cf-input>
 
-						<label class="input-area__input-box input-area__input-box--textbox">
-							<input
-								type="text"
-								name="login"
-								v-model="email"
-								placeholder="Введите email"
-								class="input-area__input-editor input-editor--number ym-hide-content"
-							/>
-						</label>
-					</div>
+					<cf-input
+						caption="Password"
+						placeholder="Введите пароль"
+						name="password"
+						type="password"
+						v-model="password"
+						:errorText="getError"
+						:validate="getError ? 'wrong' : ''"
+					></cf-input>
 
-					<div class="modal-window__inner input-area modal-window__inner--number">
-						<span class="input-area__text">Пароль</span>
-
-						<label class="input-area__input-box input-area__input-box--textbox">
-							<input
-								type="password"
-								name="password"
-								v-model="password"
-								placeholder="Введите пароль"
-								class="input-area__input-editor input-editor--number ym-hide-content"
-							/>
-						</label>
-					</div>
-
-					<div v-if="getError">{{ getError }}</div>
 					<button class="ds-auth-window__btn-sub" type="submit">Зарегаться</button>
 				</form>
 
@@ -98,34 +81,18 @@
 					@submit.prevent="signIn"
 					class="ds-auth-window__form-sign form form--sign"
 				>
-					<div class="modal-window__inner input-area modal-window__inner--number">
-						<span class="input-area__text">Email</span>
+					<cf-input caption="Email" placeholder="Введите email" name="login" v-model="email"></cf-input>
 
-						<label class="input-area__input-box input-area__input-box--textbox">
-							<input
-								type="text"
-								name="login"
-								v-model="email"
-								placeholder="Введите email"
-								class="input-area__input-editor input-editor--number ym-hide-content"
-							/>
-						</label>
-					</div>
+					<cf-input
+						caption="Password"
+						placeholder="Введите пароль"
+						name="password"
+						type="password"
+						v-model="password"
+						:errorText="getError"
+						:validate="getError ? 'wrong' : ''"
+					></cf-input>
 
-					<div class="modal-window__inner input-area modal-window__inner--number">
-						<span class="input-area__text">Пароль</span>
-
-						<label class="input-area__input-box input-area__input-box--textbox">
-							<input
-								type="password"
-								name="password"
-								v-model="password"
-								placeholder="Введите пароль"
-								class="input-area__input-editor input-editor--number ym-hide-content"
-							/>
-						</label>
-					</div>
-					<div v-if="getError">{{ getError }}</div>
 					<button class="ds-auth-window__btn-sub" type="submit">Войти</button>
 				</form>
 
@@ -141,6 +108,7 @@
 </template>
 
 <script>
+import CfInput from "@/components/forms/CfInput.vue";
 export default {
 	data() {
 		return {
@@ -196,6 +164,9 @@ export default {
 		// 	this.authUser = user;
 		// });
 		console.log(this);
+	},
+	components: {
+		CfInput,
 	},
 };
 </script>

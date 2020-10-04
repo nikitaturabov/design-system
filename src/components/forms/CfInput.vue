@@ -10,13 +10,15 @@
 			]"
 		>
 			<input
-				v-model="textData"
 				class="input__editor"
-				type="text"
+				:name="name"
 				:placeholder="placeholder"
 				:disabled="disabled"
+				:value="value"
+				:type="type"
+				@input="$emit('input', $event.target.value)"
 				@focus="inFocused = true"
-				@blur="(inFocused = false), $parent.$emit('any-data', textData)"
+				@blur="(inFocused = false), $parent.$emit('any-data', $event.target.value)"
 				v-mask="mask"
 			/>
 			<icon-base v-if="validate === 'done'" height="16" width="16" class="input__done"><success /></icon-base>
@@ -52,11 +54,22 @@ export default {
 		mask: {
 			type: String,
 		},
+		name: {
+			type: String,
+			default: "",
+		},
+		value: {
+			type: String,
+			default: "",
+		},
+		type: {
+			type: String,
+			default: "text",
+		},
 	},
 	data() {
 		return {
 			inFocused: false,
-			textData: null,
 		};
 	},
 	components: {
