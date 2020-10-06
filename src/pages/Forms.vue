@@ -4,7 +4,11 @@
 		<span class="ds-current-page__text ds-current-page__text--gray">Компоненты формы</span>
 
 		<component-wrapper name="Select">
-			<cf-select placeholder="Select" caption="Select" :options="options"></cf-select>
+			<cf-row>
+				<cf-col col="4">
+					<cf-select placeholder="Select" caption="Select" :options="options"></cf-select>
+				</cf-col>
+			</cf-row>
 		</component-wrapper>
 
 		<component-wrapper name="Input without label">
@@ -76,6 +80,8 @@ import CfSelect from "@/components/forms/CfSelect.vue";
 import CfCheckbox from "@/components/forms/CfCheckbox.vue";
 import CfRadio from "@/components/forms/CfRadio.vue";
 import ComponentWrapper from "@/partials/ComponentWrapper.vue";
+import CfRow from "@/components/layout/CfRow";
+import CfCol from "@/components/layout/CfCol";
 
 export default {
 	name: "Forms",
@@ -108,6 +114,8 @@ export default {
 		CfCheckbox,
 		CfRadio,
 		ComponentWrapper,
+		CfRow,
+		CfCol,
 	},
 };
 </script>
