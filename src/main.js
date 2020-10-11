@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "@/router.js";
 import store from "@/store.js";
-import styles from "@/assets/scss/main.scss";
+import styles from "@/assets/scss/_main.scss";
 import Vuelidate from "vuelidate";
 
 import "vue-code-highlight/themes/duotone-sea.css";
