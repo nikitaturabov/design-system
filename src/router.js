@@ -8,6 +8,7 @@ import Tooltips from "@/pages/Tooltips.vue";
 import Forms from "@/pages/Forms.vue";
 import Logos from "@/pages/Logos.vue";
 import Colors from "@/pages/Colors.vue";
+import Modals from "@/pages/Modals.vue";
 import Auth from "@/components/Auth.vue";
 import LastChange from "@/components/LastChange.vue";
 import ComponentsSystem from "@/components/ComponentsSystem.vue";
@@ -67,6 +68,11 @@ export default new VueRouter({
 					path: "validate",
 					name: "validate",
 					component: Validate,
+				},
+				{
+					path: "modals",
+					name: "modals",
+					component: Modals,
 				},
 				{
 					path: "lastchange",

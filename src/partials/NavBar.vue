@@ -50,6 +50,10 @@ export default {
 					path: "/system/tooltips",
 				},
 				{
+					content: "Modals",
+					path: "/system/modals",
+				},
+				{
 					content: "LastChange",
 					path: "/system/lastchange",
 				},
@@ -120,8 +124,7 @@ export default {
 
 		color: #ffffff;
 	}
-
-	&__components-list {
+	дщсфд &__components-list {
 		margin-top: 20px;
 	}
 }
@@ -129,6 +132,8 @@ export default {
 .ds-components-list {
 	display: flex;
 	flex-direction: column;
+	overflow-y: auto;
+	height: 55vh;
 
 	&__item {
 		&:nth-last-child(2) {
