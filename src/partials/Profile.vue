@@ -1,12 +1,13 @@
 <template>
 	<div v-if="setUser" class="ds-profile">
 		<img v-if="setUser.photoURL" :src="setUser.photoURL" class="ds-profile__avatar" />
-		<h2 class="ds-profile__name">{{ setUser.email }}</h2>
-		<button @click="signOut">Выйти</button>
+		<div v-else class="ds-profile__name">{{ setUser.email.slice(0, 1).toLocaleUpperCase() }}</div>
+		<btn element="button" type="delete" size="small" text="Выйти" shape="round" @click.native.prevent="signOut"></btn>
 	</div>
 </template>
 
 <script>
+import Btn from "@/components/btns/Btn";
 export default {
 	computed: {
 		setUser() {
@@ -21,6 +22,9 @@ export default {
 	created() {
 		this.$store.dispatch("checkCurrentState");
 	},
+	components: {
+		Btn,
+	},
 };
 </script>
 
@@ -34,9 +38,17 @@ export default {
 	z-index: 1;
 
 	&__name {
-		font-size: 14px;
+		font-size: 20px;
 		font-weight: 700;
 		margin-right: 8px;
+		width: 32px;
+		height: 32px;
+		border-radius: 32px;
+		background: linear-gradient(to top right, #ff461b, #f5a800);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
 	}
 
 	&__avatar {

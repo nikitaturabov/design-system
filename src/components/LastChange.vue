@@ -45,8 +45,7 @@ export default {
 		promise
 			.then(response => response.json())
 			.then(response => {
-				this.commits = response.slice(0, 15);
-				console.log(response);
+				this.commits = response;
 			});
 	},
 	computed: {
