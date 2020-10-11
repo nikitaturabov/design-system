@@ -22,7 +22,9 @@
 				v-mask="mask"
 			/>
 			<icon-base v-if="validate === 'done'" height="16" width="16" class="input__done"><success /></icon-base>
-			<icon-base v-if="validate === 'wrong'" height="16" width="16" class="input__wrong"><wrong /></icon-base>
+			<icon-base v-if="validate === 'wrong' || errorText" height="16" width="16" class="input__wrong"
+				><wrong
+			/></icon-base>
 		</label>
 		<div v-if="errorText" class="input__error">{{ errorText }}</div>
 	</div>

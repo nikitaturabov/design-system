@@ -11,6 +11,10 @@
 			</cf-row>
 		</component-wrapper>
 
+		<component-wrapper name="Select">
+			<cf-select placeholder="Select" caption="Select" :options="options"></cf-select>
+		</component-wrapper>
+
 		<component-wrapper name="Input without label">
 			<cf-input placeholder="Input"></cf-input>
 			<cf-input placeholder="Input" validate="done"></cf-input>

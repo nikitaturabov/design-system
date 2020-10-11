@@ -1,5 +1,5 @@
 <template>
-	<div :class="[{ grid__col: col }, `grid__col--${col}`]">
+	<div :class="[{ grid__col: col }, `grid__col--${col}`, { 'grid grid--rows': rows }]">
 		<slot />
 	</div>
 </template>
@@ -11,6 +11,10 @@ export default {
 		col: {
 			type: String,
 			default: "16",
+		},
+		rows: {
+			type: Boolean,
+			default: false,
 		},
 	},
 };

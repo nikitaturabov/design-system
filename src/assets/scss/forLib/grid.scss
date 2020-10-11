@@ -11,7 +11,6 @@
 
 	&__col {
 		flex-grow: 1;
-		flex-basis: 0;
 
 		@for $i from 1 through ($grid-columns) {
 			&--#{$i} {
@@ -77,69 +76,6 @@
 
 		@include screen-mobile {
 			padding: $grid-gutter-mobile/2;
-		}
-	}
-
-	&__col {
-		flex-grow: 1;
-		flex-basis: 0;
-
-		&--center {
-			justify-content: center;
-		}
-
-		&--v {
-			&--center {
-				align-self: center;
-			}
-
-			&--top {
-				align-self: flex-start;
-			}
-		}
-
-		&--gutter {
-			@mixin get-size($gutter) {
-				width: $gutter;
-				max-width: $gutter;
-				height: $gutter;
-				flex-basis: $gutter;
-			}
-
-			flex-grow: 0;
-		}
-
-		@for $i from 1 through ($grid-columns - 1) {
-			&_#{$i} {
-				width: 100%/ ($grid-columns/$i);
-				flex-basis: 100%/ ($grid-columns/$i);
-				flex-grow: unset;
-			}
-		}
-	}
-
-	&__row {
-		margin-top: $grid-gutter;
-		margin-bottom: $grid-gutter;
-
-		&--mrg_xs {
-			margin-top: ceil($grid-gutter/4);
-			margin-bottom: ceil($grid-gutter/4);
-		}
-
-		&--mrg_s {
-			margin-top: ceil($grid-gutter/2);
-			margin-bottom: ceil($grid-gutter/2);
-		}
-
-		&--mrg_l {
-			margin-top: $grid-gutter * 2;
-			margin-bottom: $grid-gutter * 2;
-		}
-
-		&--mrg_xl {
-			margin-top: $grid-gutter * 3;
-			margin-bottom: $grid-gutter * 3;
 		}
 	}
 }

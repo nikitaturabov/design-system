@@ -232,6 +232,7 @@ export default {
 	&--small {
 		padding: 0.84rem 1.75rem;
 		min-width: 146px;
+		width: 100%;
 		font-size: 17px;
 		letter-spacing: 0.02em;
 	}
@@ -239,6 +240,7 @@ export default {
 	&--medium {
 		padding: 1.12rem 1.75rem;
 		min-width: 224px;
+		width: 100%;
 		letter-spacing: 0.02em;
 		font-size: 17px;
 		line-height: 24px;
@@ -247,6 +249,7 @@ export default {
 	&--large {
 		padding: 1.12rem 1.75rem;
 		min-width: 256px;
+		width: 100%;
 		letter-spacing: 0.01em;
 		font-size: 20px;
 		line-height: 24px;
