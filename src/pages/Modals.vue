@@ -60,6 +60,7 @@
 									mask="+7 (999) 999-99-99"
 									caption="Введите номер телефона"
 									class="info-modal-auth__input"
+									v-model="inputData"
 								></cf-input>
 							</cf-validate>
 							<cf-checkbox
@@ -102,6 +103,7 @@ export default {
 		return {
 			openedWindowModal: false,
 			openedWindowAuth: false,
+			inputData: "",
 		};
 	},
 	components: {
