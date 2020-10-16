@@ -56,9 +56,6 @@ export default {
 	&__label {
 		position: relative;
 
-		font-size: 16px;
-		line-height: 16px;
-
 		display: block;
 		padding-left: 2em;
 	}

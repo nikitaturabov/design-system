@@ -1,15 +1,30 @@
 <template>
 	<component-wrapper name="Input without label">
-		<btn
-			element="button"
-			type="red"
-			size="small"
-			text="Показать модальное окно"
-			shape="round"
-			@click.prevent.native="handler()"
-		></btn>
+		<cf-row centerHor class="info-modal__btns">
+			<cf-col col="10">
+				<btn
+					element="button"
+					type="red"
+					size="large"
+					text="Показать модальное окно"
+					shape="round"
+					@click.prevent.native="handlerOpenModal()"
+				></btn>
+			</cf-col>
+			<cf-col col="4"> </cf-col>
+			<cf-col col="10">
+				<btn
+					element="button"
+					type="red"
+					size="large"
+					text="Показать окно авторизации ЛК"
+					shape="round"
+					@click.prevent.native="handlerOpenAuthLK()"
+				></btn>
+			</cf-col>
+		</cf-row>
 
-		<cf-modal class="info-modal" :activeWindow="openedWindow" @activeSetter="activeSetter" closeBtn>
+		<cf-modal class="info-modal" :activeWindow="openedWindowModal" @activeSetter="activeSetter" closeBtn>
 			<cf-row>
 				<cf-col col="24" rows class="info-modal__content">
 					<h3 class="info-modal__title">Заголовок</h3>
@@ -29,6 +44,46 @@
 				</cf-col>
 			</cf-row>
 		</cf-modal>
+
+		<cf-modal class="info-modal-auth" :activeWindow="openedWindowAuth" @activeSetter="activeSetter" closeBtn>
+			<cf-row>
+				<cf-col col="24" rows class="info-modal-auth__content">
+					<cf-row centerHor class="info-modal-auth__content">
+						<cf-col col="24">
+							<h3 class="info-modal-auth__title">Личный кабинет</h3>
+							<div class="info-modal-auth__text">
+								Для входа необходим номер телефона, который вы указали при оформлении договора
+							</div>
+							<cf-validate valType="tel" text="Телефон должен состоять из 11 цифр">
+								<cf-input
+									placeholder="+7 (800) 555-65-65"
+									mask="+7 (999) 999-99-99"
+									caption="Введите номер телефона"
+									class="info-modal-auth__input"
+								></cf-input>
+							</cf-validate>
+							<cf-checkbox
+								subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
+								class="info-modal-auth__checkbox"
+							></cf-checkbox>
+
+							<btn
+								element="button"
+								type="red"
+								size="large"
+								text="Продолжить"
+								shape="round"
+								class="info-modal-auth__btn"
+							></btn>
+
+							<div class="info-modal-auth__sub-text">
+								Ваши данные в безопасности. Они передаются и хранятся в зашифрованном виде в защищенном дата центре
+							</div>
+						</cf-col>
+					</cf-row>
+				</cf-col>
+			</cf-row>
+		</cf-modal>
 	</component-wrapper>
 </template>
 
@@ -38,11 +93,15 @@ import ComponentWrapper from "@/partials/ComponentWrapper";
 import CfRow from "@/components/layout/CfRow";
 import CfCol from "@/components/layout/CfCol";
 import Btn from "@/components/btns/Btn";
+import CfCheckbox from "@/components/forms/CfCheckbox";
+import CfInput from "@/components/forms/CfInput";
+import CfValidate from "@/components/forms/CfValidate";
 export default {
 	name: "Modals",
 	data() {
 		return {
-			openedWindow: false,
+			openedWindowModal: false,
+			openedWindowAuth: false,
 		};
 	},
 	components: {
@@ -51,13 +110,20 @@ export default {
 		CfRow,
 		CfCol,
 		Btn,
+		CfCheckbox,
+		CfInput,
+		CfValidate,
 	},
 	methods: {
-		handler() {
-			this.openedWindow = true;
+		handlerOpenModal() {
+			this.openedWindowModal = true;
 		},
 		activeSetter(status) {
-			this.openedWindow = status;
+			this.openedWindowModal = status;
+			this.openedWindowAuth = status;
+		},
+		handlerOpenAuthLK() {
+			this.openedWindowAuth = true;
 		},
 	},
 };
@@ -86,6 +152,47 @@ export default {
 
 	&__btns {
 		margin-top: $grid-gutter * 5;
+	}
+}
+
+.info-modal-auth {
+	&__content {
+		padding: 0 $grid-gutter * 2;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 24px;
+		letter-spacing: 0.02em;
+		color: #2f343a;
+	}
+
+	&__text {
+		align-self: center;
+		text-align: center;
+		font-size: 16px;
+	}
+
+	&__btns {
+		margin-top: $grid-gutter * 5;
+	}
+
+	&__checkbox {
+		font-size: 14px;
+	}
+
+	&__sub-text {
+		font-size: 12px;
+		color: #8b949d;
+		text-align: center;
+	}
+
+	&__text,
+	&__input,
+	&__checkbox,
+	&__btn,
+	&__sub-text {
+		margin-top: $grid-gutter * 2;
 	}
 }
 </style>

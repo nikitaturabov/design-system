@@ -13,7 +13,7 @@
 			v-if="element === 'button'"
 			:disabled="disable"
 		>
-			<span>{{ text }}</span>
+			<span class="btn__text">{{ text }}</span>
 			<icon-base
 				v-if="(withImage || withImageLeft) && image === 'arrow'"
 				height="24"
@@ -142,7 +142,6 @@ export default {
 	border: none;
 	outline: none;
 	box-sizing: border-box;
-	white-space: nowrap;
 	cursor: pointer;
 	transition: 0.1s;
 
