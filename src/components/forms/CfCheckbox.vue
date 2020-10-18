@@ -1,7 +1,7 @@
 <template>
 	<div class="checkbox">
 		<label class="checkbox__label">
-			<input class="checkbox__input" type="checkbox" :name="name" :checked="checked" :disabled="disabled" />
+			<input class="checkbox__input" type="checkbox" :name="name" :checked="checked" :disabled="disabled" required />
 			<div class="checkbox__box">
 				<icon-base height="18" width="18" class="checkbox__icon-check">
 					<icon-check />

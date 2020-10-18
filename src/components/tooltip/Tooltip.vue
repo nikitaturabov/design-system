@@ -18,7 +18,7 @@
 				{ 'tooltip__container--bottom-end': position === 'bottom-end' },
 			]"
 		>
-			<span class="tooltip__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+			<span class="tooltip__text">{{ text }}</span>
 		</div>
 	</div>
 </template>
@@ -28,6 +28,9 @@ export default {
 	props: {
 		position: {
 			type: String,
+		},
+		text: {
+			default: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
 		},
 	},
 };
@@ -40,7 +43,6 @@ export default {
 		position: absolute;
 		top: calc(100% + 16px);
 		left: 0;
-		max-width: 262px;
 		background: #3b3e47;
 		border-radius: 4px;
 		padding: 16px;
@@ -83,7 +85,7 @@ export default {
 			right: calc(100% + 16px);
 			left: initial;
 			top: 0;
-			width: 400px;
+
 			&:after {
 				left: initial;
 				right: -7px;
@@ -93,7 +95,7 @@ export default {
 		&--right-start {
 			left: calc(100% + 16px);
 			top: 0;
-			width: 400px;
+
 			&:after {
 				left: -7px;
 				top: 16px;
@@ -103,7 +105,7 @@ export default {
 			right: calc(100% + 16px);
 			left: initial;
 			top: 50%;
-			width: 400px;
+
 			transform: translate(0, -50%);
 			&:after {
 				left: initial;
@@ -115,7 +117,7 @@ export default {
 		&--right {
 			left: calc(100% + 16px);
 			top: 50%;
-			width: 400px;
+
 			transform: translate(0, -50%);
 			&:after {
 				left: -7px;
@@ -128,7 +130,7 @@ export default {
 			left: initial;
 			top: initial;
 			bottom: 0;
-			width: 400px;
+
 			&:after {
 				left: initial;
 				right: -7px;
@@ -140,7 +142,7 @@ export default {
 			left: calc(100% + 16px);
 			top: initial;
 			bottom: 0;
-			width: 400px;
+
 			&:after {
 				left: -7px;
 				bottom: 16px;
@@ -182,7 +184,7 @@ export default {
 
 	&__text {
 		font-size: 12px;
-		line-height: 16px;
+		line-height: 1;
 		letter-spacing: 0.02em;
 		color: #ffffff;
 	}

@@ -2,7 +2,7 @@
 	<div v-if="setUser" class="ds-profile">
 		<img v-if="setUser.photoURL" :src="setUser.photoURL" class="ds-profile__avatar" />
 		<div v-else class="ds-profile__name">{{ setUser.email.slice(0, 1).toLocaleUpperCase() }}</div>
-		<btn element="button" type="delete" size="small" text="Выйти" shape="round" @click.native.prevent="signOut"></btn>
+		<btn element="button" mode="delete" size="small" text="Выйти" shape="round" @click.native.prevent="signOut"></btn>
 	</div>
 </template>
 

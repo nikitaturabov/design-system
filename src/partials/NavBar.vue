@@ -23,39 +23,43 @@ export default {
 			pages: [
 				{
 					content: "Layout",
-					path: "/system/layout",
+					path: "/layout",
 				},
 				{
 					content: "Logos",
-					path: "/system/logos",
+					path: "/logos",
 				},
 				{
 					content: "Colors",
-					path: "/system/colors",
+					path: "/colors",
 				},
 				{
 					content: "Buttons",
-					path: "/system/buttons",
+					path: "/buttons",
 				},
 				{
 					content: "Forms",
-					path: "/system/forms",
+					path: "/forms",
 				},
 				{
 					content: "Validate",
-					path: "/system/validate",
+					path: "/validate",
 				},
 				{
 					content: "Tooltips",
-					path: "/system/tooltips",
+					path: "/tooltips",
 				},
 				{
 					content: "Modals",
-					path: "/system/modals",
+					path: "/modals",
+				},
+				{
+					content: "Slider",
+					path: "/slider",
 				},
 				{
 					content: "LastChange",
-					path: "/system/lastchange",
+					path: "/lastchange",
 				},
 				{
 					content: "Назад на главную <span>v 1.0</span>",

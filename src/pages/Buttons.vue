@@ -13,50 +13,50 @@
 		<h2 class="ds-current-page__title ds-title ds-title--2">Buttons Primary</h2>
 
 		<div class="ds-current-page__group">
-			<btn element="button" type="red" size="large" text="Войти" shape="round"></btn>
-			<btn element="button" type="red" size="medium" text="Войти" shape="round"></btn>
-			<btn element="button" type="red" size="small" text="Войти" shape="round"></btn>
+			<btn element="button" mode="red" size="large" text="Войти" shape="round"></btn>
+			<btn element="button" mode="red" size="medium" text="Войти" shape="round"></btn>
+			<btn element="button" mode="red" size="small" text="Войти" shape="round"></btn>
 		</div>
 
 		<h2 class="ds-current-page__title ds-title ds-title--2">Button Primary White</h2>
 
 		<div class="ds-current-page__group">
-			<btn element="button" type="white" size="large" text="Новая заявка" shape="round"></btn>
-			<btn element="button" type="white" size="medium" text="Новая заявка" shape="round"></btn>
-			<btn element="button" type="white" size="small" text="Новая заявка" shape="round"></btn>
+			<btn element="button" mode="white" size="large" text="Новая заявка" shape="round"></btn>
+			<btn element="button" mode="white" size="medium" text="Новая заявка" shape="round"></btn>
+			<btn element="button" mode="white" size="small" text="Новая заявка" shape="round"></btn>
 		</div>
 
 		<h2 class="ds-current-page__title ds-title ds-title--2">Button Secondary</h2>
 
 		<div class="ds-current-page__group">
-			<btn element="button" type="secondary" size="large" text="Войти" shape="round" with-image image="plus"></btn>
-			<btn element="button" type="secondary" size="medium" text="Войти" shape="round" with-image image="plus"></btn>
-			<btn element="button" type="secondary" size="small" text="Войти" shape="round" with-image image="plus"></btn>
+			<btn element="button" mode="secondary" size="large" text="Войти" shape="round" with-image image="plus"></btn>
+			<btn element="button" mode="secondary" size="medium" text="Войти" shape="round" with-image image="plus"></btn>
+			<btn element="button" mode="secondary" size="small" text="Войти" shape="round" with-image image="plus"></btn>
 		</div>
 
 		<h2 class="ds-current-page__title ds-title ds-title--2">Button Arrow line</h2>
 
 		<div class="ds-current-page__group">
-			<btn element="button" type="clear" size="large" text="Войти" shape="round" with-image image="arrow"></btn>
-			<btn element="button" type="clear" size="medium" text="Войти" shape="round" with-image image="arrow"></btn>
-			<btn element="button" type="clear" size="small" text="Войти" shape="round" with-image image="arrow"></btn>
+			<btn element="button" mode="clear" size="large" text="Войти" shape="round" with-image image="arrow"></btn>
+			<btn element="button" mode="clear" size="medium" text="Войти" shape="round" with-image image="arrow"></btn>
+			<btn element="button" mode="clear" size="small" text="Войти" shape="round" with-image image="arrow"></btn>
 		</div>
 
 		<h2 class="ds-current-page__title ds-title ds-title--2">Red Btn With Icon</h2>
 
 		<div class="ds-current-page__group">
-			<btn element="button" type="red" size="large" text="Войти" shape="round" with-image image="plus"></btn>
-			<btn element="button" type="red" size="medium" text="Войти" shape="round" with-image image="arrow"></btn>
-			<btn element="button" type="red" size="small" text="Войти" shape="round"></btn>
+			<btn element="button" mode="red" size="large" text="Войти" shape="round" with-image image="plus"></btn>
+			<btn element="button" mode="red" size="medium" text="Войти" shape="round" with-image image="arrow"></btn>
+			<btn element="button" mode="red" size="small" text="Войти" shape="round"></btn>
 		</div>
 
 		<h2 class="ds-current-page__title ds-title ds-title--2">Disabled Btns</h2>
 
 		<div class="ds-current-page__group">
-			<btn element="button" type="red" size="large" text="Войти" shape="round" with-image image="plus" disable></btn>
+			<btn element="button" mode="red" size="large" text="Войти" shape="round" with-image image="plus" disable></btn>
 			<btn
 				element="button"
-				type="secondary"
+				mode="secondary"
 				size="medium"
 				text="Войти"
 				shape="round"
@@ -64,15 +64,15 @@
 				image="arrow"
 				disable
 			></btn>
-			<btn element="button" type="clear" size="small" text="Войти" shape="round" disable></btn>
+			<btn element="button" mode="clear" size="small" text="Войти" shape="round" disable></btn>
 		</div>
 
 		<h2 class="ds-current-page__title ds-title ds-title--2">Button Secondary</h2>
 
 		<div class="ds-current-page__group">
-			<btn element="button" type="add" size="small" text="Add" shape="round" with-image image="plus"></btn>
-			<btn element="button" type="delete" size="small" text="Delete" shape="round"></btn>
-			<btn element="button" type="cancel" size="small" text="Cancel" shape="round"></btn>
+			<btn element="button" mode="add" size="small" text="Add" shape="round" with-image image="plus"></btn>
+			<btn element="button" mode="delete" size="small" text="Delete" shape="round"></btn>
+			<btn element="button" mode="cancel" size="small" text="Cancel" shape="round"></btn>
 		</div>
 
 		<h2 class="ds-current-page__title ds-title ds-title--2">Button Details</h2>
@@ -80,7 +80,7 @@
 		<div class="ds-current-page__group">
 			<btn
 				element="button"
-				type="detail-dark"
+				mode="detail-dark"
 				size="large"
 				text="Детализация займа"
 				shape="square"
@@ -89,7 +89,7 @@
 			></btn>
 			<btn
 				element="button"
-				type="detail-light"
+				mode="detail-light"
 				size="large"
 				text="Детализация займа"
 				shape="square"

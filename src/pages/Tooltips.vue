@@ -17,53 +17,53 @@
 			<div class="ds-component__wrapper">
 				<div class="ds-component__row ds-component__row--center ds-component__row--mrt10">
 					<tooltip position="top-start">
-						<btn element="button" color="red" size="small" text="Top start" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Top start" shape="round"></btn>
 					</tooltip>
 
 					<tooltip position="top">
-						<btn element="button" color="red" size="small" text="Top" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Top" shape="round"></btn>
 					</tooltip>
 
 					<tooltip position="top-end">
-						<btn element="button" color="red" size="small" text="Top end" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Top end" shape="round"></btn>
 					</tooltip>
 				</div>
 				<div class="ds-component__row ds-component__row--spb ds-component__row--mrt10">
 					<tooltip position="right-start">
-						<btn element="button" color="red" size="small" text="Right start" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Right start" shape="round"></btn>
 					</tooltip>
 
 					<tooltip position="left-start">
-						<btn element="button" color="red" size="small" text="Left start" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Left start" shape="round"></btn>
 					</tooltip>
 				</div>
 				<div class="ds-component__row ds-component__row--spb ds-component__row--mrt10">
 					<tooltip position="right">
-						<btn element="button" color="red" size="small" text="Right" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Right" shape="round"></btn>
 					</tooltip>
 					<tooltip position="left">
-						<btn element="button" color="red" size="small" text="Left" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Left" shape="round"></btn>
 					</tooltip>
 				</div>
 				<div class="ds-component__row ds-component__row--spb ds-component__row--mrt10">
 					<tooltip position="right-end">
-						<btn element="button" color="red" size="small" text="Right end" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Right end" shape="round"></btn>
 					</tooltip>
 					<tooltip position="left-end">
-						<btn element="button" color="red" size="small" text="Left end" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Left end" shape="round"></btn>
 					</tooltip>
 				</div>
 				<div class="ds-component__row ds-component__row--center ds-component__row--mrt10">
 					<tooltip position="bottom-start">
-						<btn element="button" color="red" size="small" text="Bottom start" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Bottom start" shape="round"></btn>
 					</tooltip>
 
 					<tooltip position="bottom">
-						<btn element="button" color="red" size="small" text="Bottom" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Bottom" shape="round"></btn>
 					</tooltip>
 
 					<tooltip position="bottom-end">
-						<btn element="button" color="red" size="small" text="Bottom end" shape="round"></btn>
+						<btn element="button" mode="red" size="small" text="Bottom end" shape="round"></btn>
 					</tooltip>
 				</div>
 			</div>
