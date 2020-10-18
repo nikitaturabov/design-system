@@ -12,13 +12,14 @@
 			]"
 			v-if="element === 'button'"
 			:disabled="disable"
+			:type="type"
 		>
 			<span class="btn__text">{{ text }}</span>
 			<icon-base
 				v-if="(withImage || withImageLeft) && image === 'arrow'"
 				height="24"
 				width="24"
-				:iconColor="fill[type].clr"
+				:iconColor="fill[mode].clr"
 			>
 				<arrow-btn />
 			</icon-base>
@@ -26,15 +27,11 @@
 				v-if="(withImage || withImageLeft) && image === 'plus'"
 				height="24"
 				width="24"
-				:iconColor="fill[type].clr"
+				:iconColor="fill[mode].clr"
 			>
 				<plus />
 			</icon-base>
 		</button>
-		<a v-if="element === 'link'" class="btn btn--red" :class="[setColor, setSize, setShape]">{{ text }}</a>
-		<label v-if="element === 'input'">
-			<input type="button" class="btn btn--red" :class="[setColor, setSize, setShape]" :value="text" />
-		</label>
 	</div>
 </template>
 
@@ -48,7 +45,7 @@ export default {
 			type: String,
 			default: "button",
 		},
-		type: {
+		mode: {
 			type: String,
 			default: "red",
 		},
@@ -79,6 +76,10 @@ export default {
 		withImageLeft: {
 			type: Boolean,
 			default: false,
+		},
+		type: {
+			type: String,
+			default: "submit",
 		},
 	},
 	data() {
@@ -119,7 +120,7 @@ export default {
 	},
 	computed: {
 		setColor() {
-			return `btn--${this.type}`;
+			return `btn--${this.mode}`;
 		},
 		setSize() {
 			return `btn--${this.size}`;

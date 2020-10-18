@@ -48,7 +48,7 @@ export default {
 
 <style lang="scss">
 .ds-block-view {
-	background: #e5e5e5;
+	background: #eff3f9;
 	overflow-y: auto;
 	height: 100vh;
 

@@ -43,7 +43,7 @@
 							<cf-col col="22">
 								<btn
 									element="button"
-									type="red"
+									mode="red"
 									size="medium"
 									text="Зарегаться"
 									shape="round"
@@ -79,7 +79,7 @@
 							<cf-col col="22">
 								<btn
 									element="button"
-									type="red"
+									mode="red"
 									size="medium"
 									text="Войти"
 									shape="round"
@@ -95,7 +95,7 @@
 				<cf-col col="22">
 					<btn
 						element="button"
-						type="add"
+						mode="add"
 						size="small"
 						text="Авторизация через google"
 						shape="round"

@@ -9,6 +9,7 @@ import Forms from "@/pages/Forms.vue";
 import Logos from "@/pages/Logos.vue";
 import Colors from "@/pages/Colors.vue";
 import Modals from "@/pages/Modals.vue";
+import Slider from "@/pages/Slider.vue";
 import Auth from "@/components/Auth.vue";
 import LastChange from "@/components/LastChange.vue";
 import ComponentsSystem from "@/components/ComponentsSystem.vue";
@@ -35,47 +36,52 @@ export default new VueRouter({
 			component: ComponentsSystem,
 			children: [
 				{
-					path: "layout",
+					path: "/layout",
 					name: "layout",
 					component: Layout,
 				},
 				{
-					path: "buttons",
+					path: "/buttons",
 					name: "buttons",
 					component: Buttons,
 				},
 				{
-					path: "forms",
+					path: "/forms",
 					name: "forms",
 					component: Forms,
 				},
 				{
-					path: "tooltips",
+					path: "/tooltips",
 					name: "tooltips",
 					component: Tooltips,
 				},
 				{
-					path: "logos",
+					path: "/logos",
 					name: "logos",
 					component: Logos,
 				},
 				{
-					path: "colors",
+					path: "/colors",
 					name: "colors",
 					component: Colors,
 				},
 				{
-					path: "validate",
+					path: "/validate",
 					name: "validate",
 					component: Validate,
 				},
 				{
-					path: "modals",
+					path: "/modals",
 					name: "modals",
 					component: Modals,
 				},
 				{
-					path: "lastchange",
+					path: "/slider",
+					name: "slider",
+					component: Slider,
+				},
+				{
+					path: "/lastchange",
 					name: "lastchange",
 					component: LastChange,
 				},
