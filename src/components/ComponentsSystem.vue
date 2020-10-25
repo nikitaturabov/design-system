@@ -60,7 +60,7 @@ export default {
 
 	&__block-view {
 		flex: 1;
-		padding: 56px 85px;
+		padding: $grid-gutter * 2;
 	}
 
 	&__toggle-menu {

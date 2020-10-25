@@ -1,6 +1,6 @@
 <template>
 	<component-wrapper name="Input without label">
-		<cf-row centerHor class="info-modal__btns">
+		<cf-row centerHor mobile wrap class="info-modal__btns">
 			<cf-col col="10">
 				<btn
 					element="button"

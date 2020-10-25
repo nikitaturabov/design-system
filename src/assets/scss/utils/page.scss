@@ -18,12 +18,13 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+      flex-wrap: wrap;
 
 		border: 1px solid #ebebeb;
 
 		margin-top: 35px;
 		padding: 53px 40px 24px;
-		width: 1000px;
+
 	}
 
 	&__table {

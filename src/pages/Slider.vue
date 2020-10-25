@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<component-wrapper name="Слайдер калькулятора">
-			<cf-row>
-				<cf-col col="16">
+			<cf-row mobile>
+				<cf-col col="24" mobcol="24">
 					<cf-slider
 						:min="1000"
 						:max="15000"
@@ -17,16 +17,16 @@
 		</component-wrapper>
 
 		<component-wrapper name="Слайдер без кнопок">
-			<cf-row>
-				<cf-col col="12">
+			<cf-row mobile>
+				<cf-col col="24" mobcol="24">
 					<cf-slider :min="1000" :max="30000" :interval="1000" :val="7000" units="₽"></cf-slider>
 				</cf-col>
 			</cf-row>
 		</component-wrapper>
 
 		<component-wrapper name="Слайдер Мобилка">
-			<cf-row>
-				<cf-col col="8">
+			<cf-row mobile>
+				<cf-col col="12" mobcol="24">
 					<cf-slider
 						:min="1000"
 						:max="15000"

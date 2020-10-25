@@ -18,7 +18,7 @@ Vue.use(VueRouter);
 
 export default new VueRouter({
 	mode: "history",
-	base: "/system",
+	base: "/",
 	routes: [
 		{
 			path: "/",
@@ -37,52 +37,52 @@ export default new VueRouter({
 			children: [
 				{
 					path: "/layout",
-					name: "layout",
+					name: "Layout",
 					component: Layout,
 				},
 				{
 					path: "/buttons",
-					name: "buttons",
+					name: "Buttons",
 					component: Buttons,
 				},
 				{
 					path: "/forms",
-					name: "forms",
+					name: "Forms",
 					component: Forms,
 				},
 				{
 					path: "/tooltips",
-					name: "tooltips",
+					name: "Tooltips",
 					component: Tooltips,
 				},
 				{
 					path: "/logos",
-					name: "logos",
+					name: "Logos",
 					component: Logos,
 				},
 				{
 					path: "/colors",
-					name: "colors",
+					name: "Colors",
 					component: Colors,
 				},
 				{
 					path: "/validate",
-					name: "validate",
+					name: "Validate",
 					component: Validate,
 				},
 				{
 					path: "/modals",
-					name: "modals",
+					name: "Modals",
 					component: Modals,
 				},
 				{
 					path: "/slider",
-					name: "slider",
+					name: "Slider",
 					component: Slider,
 				},
 				{
 					path: "/lastchange",
-					name: "lastchange",
+					name: "lLast Changes",
 					component: LastChange,
 				},
 			],

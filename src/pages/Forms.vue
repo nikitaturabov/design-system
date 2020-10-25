@@ -11,69 +11,113 @@
 			</cf-row>
 		</component-wrapper>
 
-		<component-wrapper name="Select">
-			<cf-select placeholder="Select" caption="Select" :options="options"></cf-select>
-		</component-wrapper>
-
 		<component-wrapper name="Input without label">
-			<cf-input placeholder="Input"></cf-input>
-			<cf-input placeholder="Input" validate="done"></cf-input>
-			<cf-input placeholder="Input" errorText="Ошибочка вышла" validate="wrong"></cf-input>
-			<cf-input placeholder="Input" disabled></cf-input>
+			<cf-row mobile wrap>
+				<cf-col col="6">
+					<cf-input placeholder="Input"></cf-input>
+				</cf-col>
+				<cf-col col="6">
+					<cf-input placeholder="Input" validate="done"></cf-input>
+				</cf-col>
+				<cf-col col="6">
+					<cf-input placeholder="Input" errorText="Ошибочка вышла" validate="wrong"></cf-input>
+				</cf-col>
+				<cf-col col="6">
+					<cf-input placeholder="Input" disabled></cf-input>
+				</cf-col>
+			</cf-row>
 		</component-wrapper>
 
 		<component-wrapper name="Input with label">
-			<cf-input placeholder="Input" caption="Label"></cf-input>
-			<cf-input placeholder="Input" caption="Label" validate="done"></cf-input>
-			<cf-input placeholder="Input" errorText="Ошибочка вышла" caption="Label" validate="wrong"></cf-input>
-			<cf-input placeholder="Input" caption="Label" disabled></cf-input>
+			<cf-row mobile wrap>
+				<cf-col col="6">
+					<cf-input placeholder="Input" caption="Label"></cf-input>
+				</cf-col>
+				<cf-col col="6">
+					<cf-input placeholder="Input" caption="Label" validate="done"></cf-input>
+				</cf-col>
+				<cf-col col="6">
+					<cf-input placeholder="Input" errorText="Ошибочка вышла" caption="Label" validate="wrong"></cf-input>
+				</cf-col>
+				<cf-col col="6">
+					<cf-input placeholder="Input" caption="Label" disabled></cf-input>
+				</cf-col>
+			</cf-row>
 		</component-wrapper>
 
 		<component-wrapper name="Checkbox" :column="true">
-			<cf-checkbox
-				subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
-			></cf-checkbox>
-			<cf-checkbox
-				:checked="true"
-				subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
-			></cf-checkbox>
-			<cf-checkbox
-				:disabled="true"
-				subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
-			></cf-checkbox>
-			<cf-checkbox
-				:checked="true"
-				:disabled="true"
-				subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
-			></cf-checkbox>
+			<cf-row mobile wrap>
+				<cf-col col="24">
+					<cf-checkbox
+						subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
+					></cf-checkbox>
+				</cf-col>
+				<cf-col col="24">
+					<cf-checkbox
+						:checked="true"
+						subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
+					></cf-checkbox>
+				</cf-col>
+				<cf-col col="24">
+					<cf-checkbox
+						:disabled="true"
+						subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
+					></cf-checkbox>
+				</cf-col>
+				<cf-col col="24">
+					<cf-checkbox
+						:checked="true"
+						:disabled="true"
+						subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
+					></cf-checkbox>
+				</cf-col>
+			</cf-row>
 		</component-wrapper>
 
 		<component-wrapper name="Checkbox" :column="true">
-			<cf-checkbox
-				subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
-			></cf-checkbox>
-			<cf-checkbox
-				:checked="true"
-				subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
-			></cf-checkbox>
-			<cf-checkbox
-				:disabled="true"
-				subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
-			></cf-checkbox>
-			<cf-checkbox
-				:checked="true"
-				:disabled="true"
-				subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
-			></cf-checkbox>
+			<cf-row mobile wrap>
+				<cf-col col="24">
+					<cf-checkbox
+						subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
+					></cf-checkbox>
+				</cf-col>
+				<cf-col col="24">
+					<cf-checkbox
+						:checked="true"
+						subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
+					></cf-checkbox>
+				</cf-col>
+				<cf-col col="24">
+					<cf-checkbox
+						:disabled="true"
+						subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
+					></cf-checkbox>
+				</cf-col>
+				<cf-col col="24">
+					<cf-checkbox
+						:checked="true"
+						:disabled="true"
+						subtext="Я ознакомлен с правилами предоставления займов, политикой сайта, даю согласие на обработку личных данных"
+					></cf-checkbox>
+				</cf-col>
+			</cf-row>
 		</component-wrapper>
 
 		<component-wrapper name="Radio" :column="true">
-			<div>
-				<cf-radio subtext="Мужской" name="gender"></cf-radio>
-				<cf-radio subtext="Женский" name="gender"></cf-radio>
-				<cf-radio subtext="Не определен" name="gender"></cf-radio>
-				<cf-radio subtext="Гемофродит" name="gender" disabled></cf-radio>
-			</div>
+			<cf-row mobile wrap>
+				<cf-col col="24">
+					<cf-radio subtext="Мужской" name="gender"></cf-radio>
+				</cf-col>
+				<cf-col col="24">
+					<cf-radio subtext="Женский" name="gender"></cf-radio>
+				</cf-col>
+				<cf-col col="24">
+					<cf-radio subtext="Не определен" name="gender"></cf-radio>
+				</cf-col>
+				<cf-col col="24">
+					<cf-radio subtext="Гемофродит" name="gender" disabled></cf-radio>
+				</cf-col>
+			</cf-row>
 		</component-wrapper>
 	</div>
 </template>

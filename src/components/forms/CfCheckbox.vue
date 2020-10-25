@@ -45,25 +45,20 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .checkbox {
-	display: block;
-	width: 100%;
-
-	position: relative;
-	padding: 16px;
-
 	&__label {
+		display: flex;
+		align-items: center;
+		width: 100%;
 		position: relative;
-
-		display: block;
-		padding-left: 2em;
+		padding: $grid-gutter * 2;
 	}
 
 	&__input {
-		appearance: none;
-
+		opacity: 0;
 		position: absolute;
+		z-index: -1;
 	}
 
 	&__text {
@@ -74,26 +69,28 @@ export default {
 	}
 
 	&__box {
-		position: absolute;
-
 		cursor: pointer;
 		width: 24px;
 		height: 24px;
 		border-radius: 4px;
 		border: 2px solid #bdc6cf;
-		transform: translate(-50%, -50%);
-
-		position: absolute;
-		top: 50%;
-		margin-left: -2em;
-
 		display: flex;
-
 		justify-content: center;
-
 		align-items: center;
-
 		transition: all 0.1s;
+		flex-shrink: 0;
+	}
+
+	&__input:disabled:checked + &__box:after {
+		opacity: 0.5;
+	}
+
+	&__input:disabled ~ &__text {
+		color: $TextSecondary;
+	}
+
+	&__text {
+		padding-left: $grid-gutter * 2;
 	}
 
 	&__input:checked + .checkbox__box {

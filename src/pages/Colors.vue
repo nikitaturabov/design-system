@@ -6,8 +6,8 @@
 			>Доступная цветовая палитра которую следует использовать на сайте</span
 		>
 
-		<div class="ds-columns ds-columns--x2">
-			<div class="ds-columns__item ds-columns__colors">
+		<cf-row mobile wrap>
+			<cf-col col="5" class="ds-column-colors">
 				<h3 class="ds-title ds-title--3">Basic Colors</h3>
 				<div class="ds-color" v-for="(color, index) in colorsBasic" :key="index">
 					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColor('hexBasic', index)"></div>
@@ -16,8 +16,9 @@
 						<input ref="hexBasic" class="ds-color__hex" :value="color.hex" />
 					</div>
 				</div>
-			</div>
-			<div class="ds-columns__item ds-columns__colors">
+			</cf-col>
+
+			<cf-col col="5" class="ds-column-colors">
 				<h3 class="ds-title ds-title--3">Text Colors</h3>
 				<div class="ds-color" v-for="(color, index) in colorsText" :key="index">
 					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColor('hexText', index)"></div>
@@ -26,8 +27,9 @@
 						<input ref="hexText" class="ds-color__hex" :value="color.hex" />
 					</div>
 				</div>
-			</div>
-			<div class="ds-columns__item ds-columns__colors">
+			</cf-col>
+
+			<cf-col col="5" class="ds-column-colors">
 				<h3 class="ds-title ds-title--3">Back</h3>
 				<div class="ds-color" v-for="(color, index) in colorsBack" :key="index">
 					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColor('hexBack', index)"></div>
@@ -36,8 +38,9 @@
 						<input ref="hexBack" class="ds-color__hex" :value="color.hex" />
 					</div>
 				</div>
-			</div>
-			<div class="ds-columns__item ds-columns__colors">
+			</cf-col>
+
+			<cf-col col="5" class="ds-column-colors">
 				<h3 class="ds-title ds-title--3">Dark Mode</h3>
 				<div class="ds-color" v-for="(color, index) in darkMode" :key="index">
 					<div class="ds-color__box" :style="{ background: color.hex }" @click="copieColor('hexDark', index)"></div>
@@ -46,8 +49,8 @@
 						<input ref="hexDark" class="ds-color__hex" :value="color.hex" />
 					</div>
 				</div>
-			</div>
-		</div>
+			</cf-col>
+		</cf-row>
 
 		<div v-highlight>
 			<pre class="ds-component__wrapper-code">
@@ -76,6 +79,8 @@
 </template>
 
 <script>
+import CfRow from "@/components/layout/CfRow";
+import CfCol from "@/components/layout/CfCol";
 export default {
 	name: "LOGOS",
 	data() {
@@ -178,7 +183,10 @@ export default {
 			],
 		};
 	},
-	components: {},
+	components: {
+		CfRow,
+		CfCol,
+	},
 	methods: {
 		copieColor(color, index) {
 			this.$refs[color][index].select();
@@ -197,6 +205,12 @@ export default {
 		margin-left: 200px;
 	}
 }
+
+.ds-column-colors {
+	min-width: 400px;
+	padding: 16px;
+}
+
 .ds-color {
 	display: flex;
 	align-items: center;

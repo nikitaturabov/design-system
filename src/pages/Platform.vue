@@ -35,7 +35,11 @@
 		</div>
 		<div class="platform__body">
 			<ul class="platform__cards platform-cards">
-				<li class="platform-cards__card platform-card platform-card--default" v-for="card of cards" :key="card">
+				<li
+					class="platform-cards__card platform-card platform-card--default"
+					v-for="(card, index) of cards"
+					:key="index"
+				>
 					<router-link :to="card.url">
 						<div class="platform-card__title">{{ card.name }}</div>
 						<div class="platform-card__description">{{ card.description }}</div>
@@ -59,7 +63,7 @@ import LogoCentrozord from "@/env-components/images/LogoCentrozord";
 import Centrofinans from "@/env-components/images/Centrofinans";
 import ArrowRight from "@/env-components/images/ArrowRight";
 export default {
-	name: "App",
+	name: "Platform",
 	data() {
 		return {
 			cards: [

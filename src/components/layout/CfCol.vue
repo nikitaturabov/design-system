@@ -1,5 +1,5 @@
 <template>
-	<div :class="[{ grid__col: col }, `grid__col--${col}`, { 'grid grid--rows': rows }]">
+	<div :class="[{ grid__col: col }, `grid__col--${col}`, `grid__col--mobile--${mobcol}`, { 'grid grid--rows': rows }]">
 		<slot />
 	</div>
 </template>
@@ -10,11 +10,15 @@ export default {
 	props: {
 		col: {
 			type: String,
-			default: "16",
+			default: "24",
 		},
 		rows: {
 			type: Boolean,
 			default: false,
+		},
+		mobcol: {
+			type: String,
+			default: "24",
 		},
 	},
 };

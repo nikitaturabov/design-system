@@ -3,15 +3,20 @@
 		<div class="ds-nav-bar__logo">CENTROZORD</div>
 		<h1 class="ds-nav-bar__title">Компоненты</h1>
 		<ul class="ds-nav-bar__components-list ds-components-list">
-			<router-link
-				tag="li"
-				ref="link"
-				class="ds-components-list__item ds-components-list__link"
-				v-for="(page, index) in pages"
-				:key="index"
-				:to="page.path"
-				v-html="page.content"
-			></router-link>
+			<router-link v-for="(page, index) in pages" :key="index" :to="page.path" v-slot="{ href, route, navigate }">
+				<li class="ds-components-list__item" @click="changePage">
+					<a
+						:href="href"
+						class="ds-components-list__link"
+						:class="{ 'ds-components-list__link--active': getCurrentPage === page.path }"
+						@click="navigate"
+						>{{ page.name }}</a
+					>
+				</li>
+			</router-link>
+			<router-link tag="li" ref="link" class="ds-components-list__item ds-components-list__link" to="/"
+				>Назад на главную <span>v 1.0</span></router-link
+			>
 		</ul>
 	</nav>
 </template>
@@ -20,67 +25,20 @@
 export default {
 	data() {
 		return {
-			pages: [
-				{
-					content: "Layout",
-					path: "/layout",
-				},
-				{
-					content: "Logos",
-					path: "/logos",
-				},
-				{
-					content: "Colors",
-					path: "/colors",
-				},
-				{
-					content: "Buttons",
-					path: "/buttons",
-				},
-				{
-					content: "Forms",
-					path: "/forms",
-				},
-				{
-					content: "Validate",
-					path: "/validate",
-				},
-				{
-					content: "Tooltips",
-					path: "/tooltips",
-				},
-				{
-					content: "Modals",
-					path: "/modals",
-				},
-				{
-					content: "Slider",
-					path: "/slider",
-				},
-				{
-					content: "LastChange",
-					path: "/lastchange",
-				},
-				{
-					content: "Назад на главную <span>v 1.0</span>",
-					path: "/",
-				},
-			],
+			pages: this.$router.options.routes[2].children,
 		};
 	},
 	methods: {
 		changePage() {
-			console.log("WORK!!!");
 			this.$store.dispatch("changePage");
 		},
 	},
-	mounted() {
-		[...this.$refs.link].forEach(item => {
-			item.$el.addEventListener("click", () => {
-				this.$store.dispatch("changePage");
-			});
-		});
+	computed: {
+		getCurrentPage() {
+			return this.$store.getters.getCurrentPage;
+		},
 	},
+	mounted() {},
 };
 </script>
 
@@ -89,7 +47,6 @@ export default {
 	background: #2f343a;
 	overflow-y: auto;
 	height: 100vh;
-
 	position: relative;
 	&__logo {
 		//font-family: $secondFont;
@@ -128,7 +85,8 @@ export default {
 
 		color: #ffffff;
 	}
-	дщсфд &__components-list {
+
+	&__components-list {
 		margin-top: 20px;
 	}
 }
@@ -143,13 +101,12 @@ export default {
 		&:nth-last-child(2) {
 			position: absolute;
 			bottom: 60.5px;
-
 			width: 100%;
 		}
+
 		&:nth-last-child(1) {
 			position: absolute;
 			bottom: 0;
-
 			width: 100%;
 		}
 	}
@@ -162,15 +119,16 @@ export default {
 		cursor: pointer;
 		white-space: nowrap;
 
+		&--active {
+			background: #fff;
+			color: #2f343a;
+		}
+
 		&:hover {
 			background: #fff;
 
 			color: #2f343a;
 		}
 	}
-}
-.router-link-exact-active {
-	background: #fff;
-	color: #2f343a;
 }
 </style>

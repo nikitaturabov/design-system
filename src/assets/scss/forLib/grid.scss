@@ -13,9 +13,27 @@
 		flex-grow: 1;
 
 		@for $i from 1 through ($grid-columns) {
-			&--#{$i} {
-				width: 100%/ ($grid-columns/$i);
-				flex-basis: 100%/ ($grid-columns/$i);
+			@include screen-desktop {
+				&--#{$i} {
+					width: 100%/ ($grid-columns/$i);
+					flex-basis: 100%/ ($grid-columns/$i);
+					flex-grow: unset;
+				}
+			}
+			@include screen-mobile {
+				&--#{$i}--mobile {
+					width: 100%/ ($grid-columns/$i);
+					flex-basis: 100%/ ($grid-columns/$i);
+					flex-grow: unset;
+				}
+			}
+		}
+
+		@include screen-mobile {
+			&--#{$grid-columns}--mobile {
+				width: 100%;
+				max-width: 100%;
+				flex-basis: 100%;
 				flex-grow: unset;
 			}
 		}
